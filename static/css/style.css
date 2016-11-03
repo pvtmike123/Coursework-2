@@ -1,0 +1,96 @@
+.carousel {
+    border-radius: 12px 12px 12px 12px;
+    overflow: hidden;
+}
+
+.projTitle {
+    font-family: $fontSans;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2em;
+    padding: 1em 0;
+    border-bottom: 1px solid #dadada;
+    letter-spacing: 1px;
+    color: #fff !important;
+}
+
+a:hover {
+
+    border-bottom:8px solid #F58233;padding-bottom:5px;
+}
+
+
+  body {
+  background: url(../img/main_image.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+  /* ===================================
+7. Section: call action
+==================================== */
+section.callaction {
+	background:#f9f9f9;
+	padding:50px 0 0 0;
+}
+
+
+
+/* ===================================
+8. Section: Content
+==================================== */
+
+#content {
+	position:relative;
+	background:#fff;
+	padding:50px 0 40px 0;
+}
+
+#content img {
+	max-width:100%;
+	height:auto;
+}
+
+/* --- Call to action --- */
+
+.cta-text {
+	text-align: center;
+	margin-top:10px;
+}
+
+
+.big-cta .cta {
+	margin-top:10px;
+}
+
+/* --- box --- */
+
+.box {
+	width: 100%;
+}
+.box-gray  {
+	background: #f8f8f8;
+	padding: 20px 20px 30px;
+}
+.box-gray  h4,.box-gray  i {
+	margin-bottom: 20px;
+}
+.box-bottom {
+	padding: 20px 0;
+	text-align: center;
+}
+.box-bottom a {
+	color: #fff;
+	font-weight: 700;
+}
+.box-bottom a:hover {
+	color: #eee;
+	text-decoration: none;
+}
+
+/* box */
+.box-bottom {
+	background:#68A4C4;
+}
