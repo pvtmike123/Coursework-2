@@ -1,96 +1,103 @@
-.carousel {
-    border-radius: 12px 12px 12px 12px;
-    overflow: hidden;
-}
-
-.projTitle {
-    font-family: $fontSans;
-    font-weight: bold;
-    text-align: center;
-    font-size: 2em;
-    padding: 1em 0;
-    border-bottom: 1px solid #dadada;
-    letter-spacing: 1px;
-    color: #fff !important;
-}
-
-a:hover {
-
-    border-bottom:8px solid #F58233;padding-bottom:5px;
-}
-
-
-  body {
-  background: url(../img/main_image.jpg) no-repeat center center fixed;
+body {
+  background: url('../main_image.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-  /* ===================================
-7. Section: call action
-==================================== */
-section.callaction {
-	background:#f9f9f9;
-	padding:50px 0 0 0;
+header .intro-text {
+
+}
+header .intro-text .intro-lead-in {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 22px;
+    color: white;
+}
+header .intro-text .intro-heading {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+    color: white;
 }
 
-
-
-/* ===================================
-8. Section: Content
-==================================== */
-
-#content {
-	position:relative;
-	background:#fff;
-	padding:50px 0 40px 0;
+@media (min-width: 768px) {
+  header .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
+  }
+  header .intro-text .intro-lead-in {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 30px;
+    margin-bottom: 35px;
+  }
+  header .intro-text .intro-heading {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 30px;
+    margin-bottom: 25px;
+  }
 }
 
-#content img {
-	max-width:100%;
-	height:auto;
+.btn-warning{
+    border-radius: 8px !important;
+    width: 200px !important;
+    height: 45px !important;
+    background-color: #EC971F !important;
 }
 
-/* --- Call to action --- */
-
-.cta-text {
-	text-align: center;
-	margin-top:10px;
+.form-signin {
+    max-width: 500px;
+    padding: 15px;
+    margin: auto;
 }
 
-
-.big-cta .cta {
-	margin-top:10px;
+@media screen and (max-width: 376px) {
+    .form-signin {
+        margin-top: -48%;
+    }
 }
 
-/* --- box --- */
-
-.box {
-	width: 100%;
-}
-.box-gray  {
-	background: #f8f8f8;
-	padding: 20px 20px 30px;
-}
-.box-gray  h4,.box-gray  i {
-	margin-bottom: 20px;
-}
-.box-bottom {
-	padding: 20px 0;
-	text-align: center;
-}
-.box-bottom a {
-	color: #fff;
-	font-weight: 700;
-}
-.box-bottom a:hover {
-	color: #eee;
-	text-decoration: none;
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
 }
 
-/* box */
-.box-bottom {
-	background:#68A4C4;
+.form-signin .checkbox {
+    font-weight: normal;
+}
+
+.form-signin .form-control {
+    position: ;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
