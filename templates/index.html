@@ -3,24 +3,31 @@
 
     <head>
 
-    <html class="full" lang="en">
-
-
-      <title>Network Rail</title>
-
   </head>
 
-    <body>
+   <body>
 
-   <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Network Rail!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <button type="button" class="btn btn-warning">View More</button>
-            </div>
+    <div class="container">
+
+      <div class="jumbotron">
+        <h1>My personal blog!</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-lg btn-success" href="/blog_post" role="button">View more posts!</a></p>
+      </div>
+
+        {% for item in sales %}
+
+
+        <div class="col-lg-6">
+          <h4><a href="">{{ item.title }}</a></h4>
+          <p> {{ item.content|truncate(9) }}</p>
         </div>
-    </header>
+
+             {% endfor %}
+
+    </div> <!-- /container -->
+
+
 
 
     </body>

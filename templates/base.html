@@ -4,12 +4,12 @@
   <link href="../static/css/bootstrap.min.css" rel="stylesheet">
    <link href="../static/css/style.css" rel="stylesheet">
 
-      <title>Network Rail</title>
+      <title>My Blog</title>
 
   </head>
-  <body>
-     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed" role="navigation">
+
+  <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -19,19 +19,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Business Casual</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="/about">About</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/secret-page">Login</a>
                     </li>
                 </ul>
             </div>
@@ -39,6 +46,8 @@
         </div>
         <!-- /.container -->
     </nav>
+
+  </div>
 
     {% block content %}
 
