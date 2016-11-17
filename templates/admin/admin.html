@@ -1,0 +1,43 @@
+{% extends"/admin_nav.html" %}
+{% block content %}
+
+       <div class="container">
+
+           <h1 class="text-center">Admin Home</h1>
+
+           <hr>
+
+           <div class="row">
+               <div class="col-md-6">
+
+                <div class="jumbotron">
+            <h1 class="text-center">Your Blogs
+                   <span class="glyphicon glyphicon-pencil btn-lg"></span></h1>
+            <p>View your current live blogs on the website, you can also edit and delete blogs in this area.</p>
+                    <a href="/admin-posts" class="btn btn-success center-block" role="button">View more</a>
+        </div>
+
+               </div>
+               <div class="col-md-6">
+
+                <div class="jumbotron">
+            <h1 class="text-center">My Details
+                   <span class="glyphicon glyphicon-user btn-lg"></span></h1>
+            <p>View your personal details in this area, you will be promted to enter your password again. </p>
+                      <a href="/my-details" class="btn btn-success center-block" role="button">View more</a>
+        </div>
+
+               </div>
+           </div>
+
+        <div class="jumbotron">
+            <h1 class="text-center">Settings
+                <span class="glyphicon glyphicon-lock btn-lg"></span></h1>
+            <p class="text-center">You can edit blog setting and features</p>
+             <a href="/admin-posts" class="btn btn-success center-block" role="button">View more</a>
+        </div>
+
+
+
+
+{% endblock %}

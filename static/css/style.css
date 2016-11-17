@@ -192,4 +192,17 @@ footer p {
     }
 }
 
+.glyphicon-glyphicon-pencil {
+    font-size: 150px !important;
+    text-align: center !important;
+}
+
+.col-md-6{
+    display:block !important;
+    text-align:center !important;
+}
+
+.btn-lg{
+    font-size: 18px !important;
+}
 

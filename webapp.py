@@ -5,6 +5,7 @@ import sys
 from flask import Flask, render_template, request, Response, session, g, redirect, url_for, \
      abort, flash
 
+
 DATABASE = '/Users/flemin100/Documents/Uni/AWT/Coursework-2/webapp/sales.db'
 
 
@@ -39,7 +40,6 @@ def authenticate():
     'You have to login with proper credentials', 401,
     {'WWW-Authenticate': 'Basic realm="Login Required"'})
 
-
 def requires_auth(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -50,23 +50,42 @@ def requires_auth(f):
     return decorated
 
 
-@app.route('/secret-page')
+@app.route('/admin-home')
 @requires_auth
 def secret_page():
-    """requires_auth function to work then renders on html page"""
-    return render_template('admin.html')
+    g.db = connect_db()
+    cur = g.db.execute('select title, author, id, content from content')
+    sales = [dict(title=row[0], author=row[1], id=row[2], content=row[3]) for row in cur.fetchall()]
+    g.db.close()
+    return render_template('admin/admin.html', sales=sales)
 
 
-@app.route('/login', methods=['POST', 'GET'])
-def login():
+@app.route('/admin-posts')
+@requires_auth
+def posts():
+    g.db = connect_db()
+    cur = g.db.execute('select title, author, id, content from content')
+    sales = [dict(title=row[0], author=row[1], id=row[2], content=row[3]) for row in cur.fetchall()]
+    g.db.close()
+    return render_template('admin/admin_blog_posts.html', sales=sales)
 
-    return render_template("login.html")
+
+@app.route('/my-details')
+@requires_auth
+def my_details():
+    g.db = connect_db()
+    cur = g.db.execute('select title, author, id, content from content')
+    sales = [dict(title=row[0], author=row[1], id=row[2], content=row[3]) for row in cur.fetchall()]
+    g.db.close()
+    return render_template('admin/my_details.html', sales=sales)
 
 
-@app.route('/blog_post')
-def post():
+@app.route('//blog_post/<page_id>')
+def post(page_id):
+    pageid = id
     g.db = connect_db()
     cur = g.db.execute('select title, author from content')
+    sql = "SELECT * FROM content WHERE id = $id"
     sales = [dict(title=row[0], author=row[1]) for row in cur.fetchall()]
     g.db.close()
     return render_template("blog_post.html", sales=sales)
