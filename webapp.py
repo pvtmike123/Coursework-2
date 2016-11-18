@@ -21,8 +21,8 @@ def connect_db():
 @app.route('/index')
 def index():
     g.db = connect_db()
-    cur = g.db.execute('select title, author, id, content from content')
-    sales = [dict(title=row[0], author=row[1], id=row[2], content=row[3]) for row in cur.fetchall()]
+    cur = g.db.execute('select title, author, id, content, image from content')
+    sales = [dict(title=row[0], author=row[1], id=row[2], content=row[3], image=row[4]) for row in cur.fetchall()]
     g.db.close()
     return render_template("index.html", sales=sales)
 
@@ -74,15 +74,14 @@ def posts():
 @requires_auth
 def my_details():
     g.db = connect_db()
-    cur = g.db.execute('select title, author, id, content from content')
-    sales = [dict(title=row[0], author=row[1], id=row[2], content=row[3]) for row in cur.fetchall()]
+    cur = g.db.execute('select id, first_name, second_name, email, dob, img from users')
+    users = [dict(id=row[0], first_name=row[1], second_name=row[2], email=row[3], dob=row[4], img=row[5]) for row in cur.fetchall()]
     g.db.close()
-    return render_template('admin/my_details.html', sales=sales)
+    return render_template('admin/my_details.html', users=users)
 
 
-@app.route('//blog_post/<page_id>')
-def post(page_id):
-    pageid = id
+@app.route('/blog-post')
+def post():
     g.db = connect_db()
     cur = g.db.execute('select title, author from content')
     sql = "SELECT * FROM content WHERE id = $id"

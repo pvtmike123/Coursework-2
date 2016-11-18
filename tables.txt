@@ -1,7 +1,7 @@
 import sqlite3 as lite
 import sys
 
-sales = {
+users = {
     ('John', 2200),
     ('John', 2200),
     ('John', 2200),
@@ -21,6 +21,6 @@ with con:
 
     cur = con.cursor()
 
-    cur.execute("DROP TABLE IF EXISTS reps")
-    cur.execute("CREATE TABLE reps(rep_name TEXT, amount INT)")
-    cur.executemany("INSERT INTO reps VALUES(?, ?)",sales)
+    cur.execute("DROP TABLE IF EXISTS users")
+    cur.execute("CREATE TABLE users(rep_name TEXT, amount INT)")
+    cur.executemany("INSERT INTO users VALUES(?, ?)",users)

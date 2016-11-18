@@ -1,30 +1,51 @@
-{% extends"base.html" %}
+{% extends "base.html" %}
 {% block content %}
 
-   <body>
+    <!-- Page Content -->
 
-      <div class="jumbotron">
-        <h1>My personal blog!</h1>
-        <p class="lead">Welcome to my personal blog where my main area of focus will be Web related security. The blog will also feature articles about wider tech related issues.</p>
-        <p><a class="btn btn-lg btn-success" href="/blog_post" role="button">View more posts!</a></p>
-      </div>
+    <div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer">
+        <h1>A Warm Welcome!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non
+            incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+        <p><a class="btn btn-primary btn-large">View More!</a>
+        </p>
+    </header>
+
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 style="color: white">Latest Blogs</h3>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Page Features -->
+    <div class="row text-center">
 
         {% for item in sales %}
 
-
-        <div class="col-lg-6">
-          <h4><a href="{{ '/blog_post' }}">{{ item.title }}</a></h4>
-          <p> {{ item.content[:120] }}......</p>
-        </div>
+            <div class="col-md-4 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="{{ item.image }}" alt="">
+                    <div class="caption">
+                        <h4><a href="{{ '/blog_post' }}">{{ item.title }}</a></h4>
+                        <p> {{ item.content[:100] }}......</p>
+                        <p>
+                            <a href="#" class="btn btn-default">View more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
         {% endfor %}
 
+    </div>
+    <!-- /.row -->
 
 
 
 
-
-
-    </body>
-
-    {% endblock %}
+{% endblock %}
