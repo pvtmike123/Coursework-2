@@ -139,3 +139,13 @@ hr {
     background-color: #eee !important;
 }
 
+.img-responsive{
+    width: 351px !important;
+    height: 188px !important;
+}
+
+.btn-primary{
+    font-size: 18px !important;
+    max-width: 400px !important;
+}
+

@@ -7,10 +7,10 @@
 
     <!-- Jumbotron Header -->
     <header class="jumbotron hero-spacer">
-        <h1>A Warm Welcome!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non
+        <h1 class="text-center">A Warm Welcome!</h1>
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non
             incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-        <p><a class="btn btn-primary btn-large">View More!</a>
+        <p><a class="btn btn-primary btn-large center-block">View More!</a>
         </p>
     </header>
 
@@ -29,7 +29,7 @@
 
             <div class="col-md-4 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <img src="{{ item.image }}" alt="">
+                    <img class="img-responsive" src="{{ item.image }}" alt="">
                     <div class="caption">
                         <h4><a href="{{ '/blog_post' }}">{{ item.title }}</a></h4>
                         <p> {{ item.content[:100] }}......</p>
