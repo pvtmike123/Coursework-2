@@ -1,75 +1,78 @@
 {% extends"/admin_nav.html" %}
 {% block content %}
 
-     <h1 class="text-center">My Details</h1>
-    <hr>
-
     <br>
 
-         <div class="well well-lg">
+    <div class="well well-lg">
 
 
-                <div id="page-wrapper">
+        <div id="page-wrapper">
 
-                    <div class="container-fluid">
+            <div class="container-fluid">
 
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <form action="" method="post">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form action="" method="post">
 
-                                            <div class="form-group">
-                                                <label>First Name</label>
-                                                {% for item in users %}
-                                                <input class="form-control" placeholder="" name="First Name" value="{{ item.first_name }}">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        {% for item in users %}
+                                            <input class="form-control" placeholder="" name="First Name"
+                                                   value="{{ item.first_name }}">
 
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Second Name</label>
-                                                <input class="form-control" placeholder="" value="{{ item.second_name }}" name="Second Name">
+                                                <input class="form-control" placeholder=""
+                                                       value="{{ item.second_name }}" name="Second Name">
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Email Address</label>
-                                                <input class="form-control" placeholder="" value="{{ item.email }}" name="Email address">
+                                                <input class="form-control" placeholder="" value="{{ item.email }}"
+                                                       name="Email address">
                                             </div>
 
                                             <div class="form-group">
                                                 <label>Date of Birth</label>
-                                                <input class="form-control" placeholder="" value="{{ item.dob }}" name="DOB">
+                                                <input class="form-control" placeholder="" value="{{ item.dob }}"
+                                                       name="DOB">
                                             </div>
 
                                             <br>
                                             <br>
 
                                             <button type="sumbit" class="btn btn-success btn-md">Update details</button>
-                                            <button type="sumbit" class="btn btn-warning btn-md">Change password </button>
+                                            <button type="sumbit" class="btn btn-warning btn-md">Change password
+                                            </button>
 
-                                        </form>
+                                            </form>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 text-center">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <a href="#" class="thumbnail">
-                                        <img class="img-responsive" src="{{ item.img }}" align="middle" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                    {% endfor %}
+                                            </div>
+                                            </div>
+                                            </div>
+                                            <div class="col-lg-6 text-center">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body">
+                                                        <a href="#" class="thumbnail">
+                                                            <img class="img-responsive" src="{{ item.img }}"
+                                                                 align="middle" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <!-- /.row -->
+                                        {% endfor %}
 
-                    </div>
+            </div>
 
-                    </div>
+        </div>
 
-             </div>
+    </div>
 
 
 {% endblock %}
