@@ -11,6 +11,8 @@
 
     <div class="container">
 
+    <div class="jumbotron">
+
         <!-- Page Content -->
         <div class="row">
 
@@ -20,7 +22,7 @@
                 <!-- First Blog Post -->
                 <h2 style="text-align:center">
                     {% for item in sales %}
-                    <a href="#">{{ '%s'%item.title }}</a>
+                    <a href="#">{{ item.title }}</a>
                     {% endfor %}
 
 
@@ -28,24 +30,27 @@
             {% for item in sales %}
                 <p class="lead" style="text-align:center">
                     by <a href="index.php">{{ item.author }}</a>
-                    {% endfor %}
                 </p>
-                <p style="text-align:center"><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
+                <p style="text-align:center"><span class="glyphicon glyphicon-time"></span> Posted on {{ item.date }} </p>
                 <hr>
-                <img class="img-responsive" src="http://placehold.it/1100x300" align="middle" alt="">
+                <img class="img-responsive-blog" src="{{ item.image }}" align="middle" alt="">
 
+                <br>
                 <br>
 
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+                <p>{{ item.content }}</p>
 
                 <br>
 
                 <div>
+                    {% endfor %}
 
                     <footer class="footer">
         <p>&copy; 2016 Company, Inc.</p>
       </footer>
+
+                    </div>
 
 
 

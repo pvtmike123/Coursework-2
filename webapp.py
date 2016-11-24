@@ -21,7 +21,7 @@ def connect_db():
 @app.route('/index')
 def index():
     g.db = connect_db()
-    cur = g.db.execute('select title, author, id, content, image from content')
+    cur = g.db.execute('select title, author, id, content, image from content LIMIT 6')
     sales = [dict(title=row[0], author=row[1], id=row[2], content=row[3], image=row[4]) for row in cur.fetchall()]
     g.db.close()
     return render_template("index.html", sales=sales)
@@ -80,12 +80,12 @@ def my_details():
     return render_template('admin/my_details.html', users=users)
 
 
-@app.route('/blog-post')
-def post():
+@app.route('/blog/<id>')
+def blog(id=id):
     g.db = connect_db()
-    cur = g.db.execute('select title, author from content')
-    sql = "SELECT * FROM content WHERE id = $id"
-    sales = [dict(title=row[0], author=row[1]) for row in cur.fetchall()]
+    id=id
+    cur = g.db.execute('select title, author, id, image, content, date from content WHERE id=?', [id])
+    sales = [dict(title=row[0], author=row[1], id=row[2], image=row[3], content=row[4], date=row[5]) for row in cur.fetchall()]
     g.db.close()
     return render_template("blog_post.html", sales=sales)
 
@@ -94,6 +94,15 @@ def post():
 def about_me():
 
     return render_template("about.html")
+
+
+@app.route('/blogs-all')
+def allblogs():
+    g.db = connect_db()
+    cur = g.db.execute('select title, author, id, content, image from content')
+    sales = [dict(title=row[0], author=row[1], id=row[2], content=row[3], image=row[4]) for row in cur.fetchall()]
+    g.db.close()
+    return render_template("blogs_all.html", sales=sales)
 
 
 if __name__ == '__main__':

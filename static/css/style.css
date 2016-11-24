@@ -143,3 +143,19 @@ hr {
     max-width: 400px !important;
 }
 
+.footer{
+    color: white !important;
+}
+
+.img-responsive-blog{
+   width: 1015px !important;
+   height: 300px !important;
+}
+
+@media screen and (max-width: 376px){
+    .img-responsive-blog {
+        width:260px !important;
+  height:200px !important;
+    }
+}
+
