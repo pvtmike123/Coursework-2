@@ -22,7 +22,7 @@
                 <!-- First Blog Post -->
                 <h2 style="text-align:center">
                     {% for item in sales %}
-                    <a href="#">{{ item.title }}</a>
+                        <a href="{{ url_for('blog', id=item.id) }}">{{ item.title }}</a>
                     {% endfor %}
 
 
