@@ -5,7 +5,7 @@ import sys
 from flask import Flask, render_template, request, Response, session, g, redirect, url_for, \
     abort, flash
 
-DATABASE = '/Users/flemin100/Documents/Uni/AWT/Coursework-2/webapp/sales.db'
+DATABASE = '/home/tc/working/webapp/sales.db'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
