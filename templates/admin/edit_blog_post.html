@@ -21,7 +21,7 @@
                     <div class="col-lg-6">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form action="{{ url_for('updateblog') }}" method="POST">
+                                <form action="{{ url_for('') }}" method="POST">
 
                                     <div class="form-group">
                                         <label>Title</label>
@@ -40,6 +40,12 @@
                                                 <label>Date</label>
                                                 <input class="form-control" placeholder="" value="{{ item.date }}"
                                                        name="date">
+                                            </div>
+
+                                    <div class="form-group hidden">
+                                                <label>ID</label>
+                                                <input class="form-control" placeholder="" value="{{ item.id }}"
+                                                       name="id">
                                             </div>
 
                                             <div class="form-group">

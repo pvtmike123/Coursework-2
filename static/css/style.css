@@ -37,6 +37,10 @@ hr {
 
 }
 
+.navbar-default .navbar-brand {
+color:white !important;
+}
+
 .brand,
 .address-bar {
     display: none;
@@ -74,10 +78,6 @@ hr {
 
     .navbar {
         border-radius: 0;
-    }
-
-    .navbar-header {
-        display: none;
     }
 
     .navbar {

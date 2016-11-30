@@ -103,43 +103,6 @@ def editblog(id=id):
     return render_template("admin/edit_blog_post.html", sales=sales)
 
 
-@app.route('/updateblog', methods=['POST', 'GET'])
-def updateblog():
-    if request.method == 'POST':
-        try:
-            title = request.form['title']
-            author = request.form['author']
-            date = request.form['date']
-            content = request.form['content']
-
-            with g.connect("sales.db") as con:
-                g.db = connect_db()
-                cur = con.cursor()
-                cur.execute("INSERT INTO content (title,author,date,content) VALUES(?, ?, ?, ?)",
-                            (title, author, date, content))
-
-                cur.commit()
-                msg = "Record successfully added"
-        except:
-            con.rollback()
-            msg = "error in insert operation"
-
-        finally:
-            return render_template("result.html")
-            g.db.close()
-
-
-@app.route('/update-blog-content/<id>', methods=['POST'])
-@requires_auth
-def editblogcontent(id=id):
-    g.db = connect_db()
-    cur = g.db.execute("INSERT INTO content (title,author,date,content) VALUES (?,?,?,?)",
-                       (title, author, date, content))
-    sales = [dict(title=row[0], author=row[1], id=row[2], image=row[3], content=row[4], date=row[5]) for row in
-             cur.fetchall()]
-    g.db.close()
-
-
 @app.route('/delete-blog/<id>')
 def deleteblog(id=id):
     g.db = connect_db()
@@ -160,6 +123,11 @@ def allblogs():
     sales = [dict(title=row[0], author=row[1], id=row[2], content=row[3], image=row[4]) for row in cur.fetchall()]
     g.db.close()
     return render_template("blogs_all.html", sales=sales)
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("404.html"), 404
 
 
 if __name__ == '__main__':
